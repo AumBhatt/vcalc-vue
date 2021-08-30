@@ -1,16 +1,15 @@
 <template>
-    <div id="function-keys"></div>
     <div
-        id="num-keys"
-        class="num-keys"
+        id="all-keys"
+        class="all-keys"
     >
         <button
-            v-for="key in numKeys"
-            :key="key"
-            class="active"
+            v-for="key in allKeys"
+            :key="key.id"
+            :class="[ key.keyType + key.keyValue]"
             @click="printKey(key)"
         >
-            {{ key }}
+            {{ key.keyValue }}
         </button>
     </div>
 </template>
@@ -20,14 +19,24 @@ export default {
     name: "Keys",
     data() {
         return {
-            numKeys: [
-                {id: 0, }
+            allKeys: [
+                {id: 0, keyValue: 0, keyType: "num"},
+                {id: 1, keyValue: 1, keyType: "num"},
+                {id: 2, keyValue: 2, keyType: "num"},
+                {id: 3, keyValue: 3, keyType: "num"},
+                {id: 4, keyValue: 4, keyType: "num"},
+                {id: 5, keyValue: 5, keyType: "num"},
+                {id: 6, keyValue: 6, keyType: "num"},
+                {id: 7, keyValue: 7, keyType: "num"},
+                {id: 8, keyValue: 8, keyType: "num"},
+                {id: 9, keyValue: 9, keyType: "num"},
+                {id: 10, keyValue: '.', keyType: "dec"},
             ]
         }
     },
     methods: {
         printKey(key) {
-            console.log(key)
+            console.log(key.keyValue, key.keyType)
         }
     }
 }
@@ -35,7 +44,7 @@ export default {
 
 <style>
 
-.num-keys {
+.all-keys {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
 }
