@@ -1,15 +1,17 @@
 <template>
+  <Display></Display>
   <Keys>{{key}}</Keys>
 </template>
 
 <script>
 import HelloWorld from './components/HelloWorld.vue'
 import Keys from './components/Keys.vue'
+import Display from './components/Display.vue'
 
 export default {
   name: 'App',
   components: {
-    Keys
+    Keys, Display
   }
 }
 </script>
