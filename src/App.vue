@@ -12,9 +12,9 @@ export default {
   name: 'App',
   data() {
     return {
-      currentExp: '',
+      currentExp: 'a',
       historyList: [
-        {id:0, exp: "3"},
+        {id:0, exp: "3+3=6"},
         {id:1, exp: "1"},
         {id:2, exp: "2"},
         {id:3, exp: "10"},
@@ -43,14 +43,13 @@ body {
 }
 #app {
   width: 100%;
-  height: 95vh;
+  height: 90vh;
 
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family: 'Comfortaa', cursive;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
+  color: white;
 
-  background: green;
 }
 </style>

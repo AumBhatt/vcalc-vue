@@ -4,7 +4,7 @@
             <span v-for="hist in this.$parent.historyList" :key="hist.id">{{ hist.exp }}</span>
         </div>
         <span class="currentOutput">
-            {{ (exp = this.$parent.currentExp)?exp:"a" }}
+            {{ this.$parent.currentExp }}
         </span>
     </div>
 </template>
@@ -22,29 +22,32 @@ export default {
 
     display: flex;
     flex-direction: column;
+    align-items: center;
     justify-content: flex-end;
 
-    background: red;
 }
 
 .historyOutput {
     width: 100%;
     /* height: 75%; */
+    max-height: 75%;
 
     display: flex;
     flex-direction: column;
     align-items: flex-end;
     justify-content: space-between;
 
-    /* padding-top: 1.25em; */
-
     overflow-y: auto;
     scrollbar-width: none;
 
-    font-size: 1.25em;
+    font-size: 1.5em;
+    font-weight: thin;
 
-    background: blue;
 
+}
+
+.historyOutput > span {
+    margin: 2px;
 }
 
 .historyOutput::-webkit-scrollbar {
@@ -53,11 +56,12 @@ export default {
 
 .currentOutput {
     width: 100%;
-    height: auto;
+    height: 1.5em;
 
-    font-size: 2.5em;
+    border-bottom: 1px solid #fff4;
+
+    font-size: 3.5em;
     text-align: right;
 
-    background: grey;
 }
 </style>

@@ -6,7 +6,10 @@
         <button
             v-for="key in allKeys"
             :key="key.id"
-            :class="[ !isNaN(key.keyValue) ? `numKey` : key.keyName , 'calcKeys']"
+            :class="[
+                !isNaN(key.keyValue) ? `numKey` : key.keyName,
+                (key.keyValue === 'backspace')?'material-icons-outlined':'calcKeys'
+            ]"
             @click="keyPressed(key)"
         >
             {{ key.keyValue }}
@@ -21,7 +24,7 @@ export default {
         return {
             allKeys: [
                 {id: 18, keyValue: "AC", keyName: "allClearKey"},
-                {id: 17, keyValue: "back", keyName: "backspaceKey"},
+                {id: 17, keyValue: 'backspace', keyName: "backspaceKey"},
                 {id: 16, keyValue: "%", keyName: "percentKey"},
                 {id: 15, keyValue: "÷", keyName: "divKey"},
                 {id: 7, keyValue: 7},
@@ -61,19 +64,40 @@ export default {
     height: 50%;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
+    
 }
 
-.calcKeys {
+.all-keys > button {
     margin: 0.25em;
 
     border: none;
 
+    color: #e67e22;
+    font-size: x-large;
+    background: none;
 }
 
-.equalKey {
+.all-keys > .material-icons-outlined {
+    font-size: 1.5em;
+}
+
+.calcKeys {
+
+    font-family: 'Comfortaa', cursive;
+
+}
+
+.all-keys > .numKey {
+    color: white;
+}
+
+.all-keys > .equalKey {
     grid-column-start: 3;
     grid-column-end: 5;
 
-    /* background: red; */
+    border-radius: 1em;
+
+    color: white;
+    background: #e67e22;
 }
 </style>
