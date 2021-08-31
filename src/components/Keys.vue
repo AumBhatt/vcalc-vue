@@ -6,7 +6,7 @@
         <button
             v-for="key in allKeys"
             :key="key.id"
-            :class="[ !isNaN(key.keyValue) ? `numKey` : key.keyName ]"
+            :class="[ !isNaN(key.keyValue) ? `numKey` : key.keyName , 'calcKeys']"
             @click="keyPressed(key)"
         >
             {{ key.keyValue }}
@@ -57,17 +57,23 @@ export default {
 <style>
 
 .all-keys {
+    width: 100%;
+    height: 50%;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
 }
 
-.active {
+.calcKeys {
+    margin: 0.25em;
+
+    border: none;
+
 }
 
 .equalKey {
     grid-column-start: 3;
     grid-column-end: 5;
 
-    background: red;
+    /* background: red; */
 }
 </style>
