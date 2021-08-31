@@ -6,7 +6,7 @@
 <script>
 import HelloWorld from './components/HelloWorld.vue'
 import Keys from './components/Keys.vue'
-import Display from './components/Display.vue'
+import Display from './components/DisplayOutput.vue'
 
 export default {
   name: 'App',
